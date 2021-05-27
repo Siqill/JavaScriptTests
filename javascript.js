@@ -4,14 +4,22 @@
 
 
 {
+  let colors = ['red', 'aqua', 'yellow', 'black', 'white', 'orange', 'brown', 'pink', 'violet', 'blue', 'green'];
+  let timerId;
 
-  setInterval(() => {
-    if (bodyHeader.style.color == 'unset')
-      bodyHeader.style.color = 'rgb(255, 0, 0)';
-    else
-      bodyHeader.style.color = 'unset';
-  }, 1000)
+  function changeColor() {
+    timerId = setInterval(() => {
+      let color = randomInteger(0, colors.length - 1);
+      bodyHeader.style.color = colors[color];
+    }, 1000)
+  }
 
+  function stopChangeColor() {
+    clearInterval(timerId);
+    bodyHeader.style.color = '';
+  }
+
+  changeColor();
 }
 
 
@@ -322,7 +330,7 @@ let ladder = {
     this.step--;
     return this;
   },
-  showStep: function () { 
+  showStep: function () {
     alert(this.step);
     return this;
   }
