@@ -1,0 +1,13 @@
+html {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+#mocha {
+    color: aqua;
+    text-decoration: underline;
+    
+}
+
+#bodyHeader {
+    color: rgb(27, 27, 37);
+}
